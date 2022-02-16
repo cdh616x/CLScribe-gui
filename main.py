@@ -1,6 +1,4 @@
 from tkinter import *
-import os
-
 
 # FUNCTIONS
 def file_namer():
@@ -21,14 +19,8 @@ def file_namer():
 
 
 def restore():
-    user_file_name.delete("1.0", END)
-    greeting_text.delete("1.0", END)
-    opening_text.delete("1.0", END)
-    qualifications_text.delete("1.0", END)
-    hobbies_text.delete("1.0", END)
-    conclusion_text.delete("1.0", END)
-    goodbye_text.delete("1.0", END)
-
+    for n in document_components:
+        n.delete("1.0", END)
 
 
 # UI SETUP
@@ -54,8 +46,7 @@ opening = Label(text="Write an opening statement to introduce yourself.\nThis sh
 opening.grid(column=0, row=3)
 
 qualifications = Label(text="Now, list your professional qualifications for the position.\nWhat makes you the ideal "
-                            "candidate?",
-                       justify="left")
+                            "candidate?", justify="left")
 qualifications.grid(column=0, row=4)
 
 hobbies = Label(text="What other things would you like the company to know?\nOther resources, hobbies, anything else "
@@ -97,5 +88,7 @@ submit.grid(column=1, row=0)
 
 restore = Button(text="Restore", command=restore)
 restore.grid(column=1, row=8)
+
+document_components = [user_file_name, greeting_text, opening_text, qualifications_text, hobbies_text, conclusion_text, goodbye_text]
 
 window.mainloop()
