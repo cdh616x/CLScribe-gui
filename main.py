@@ -5,7 +5,7 @@ def file_namer():
     file = user_file_name.get("1.0", END)
     for n in document_components:
         x = str(n.get("1.0", END))
-        with open("./output/" + file, "a") as cover_letter:
+        with open("../.././Desktop/" + file + ".txt", "a") as cover_letter:
             cover_letter.write(x + "\n")
 
 
@@ -80,6 +80,6 @@ submit.grid(column=1, row=0)
 restore = Button(text="Restore", command=restore)
 restore.grid(column=1, row=8)
 
-document_components = [user_file_name, greeting_text, opening_text, qualifications_text, hobbies_text, conclusion_text, goodbye_text]
+document_components = [greeting_text, opening_text, qualifications_text, hobbies_text, conclusion_text, goodbye_text]
 
 window.mainloop()
