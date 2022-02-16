@@ -3,19 +3,10 @@ from tkinter import *
 # FUNCTIONS
 def file_namer():
     file = user_file_name.get("1.0", END)
-    greeting = greeting_text.get("1.0", END)
-    opening = opening_text.get("1.0", END)
-    qualifications = qualifications_text.get("1.0", END)
-    hobbies = hobbies_text.get("1.0", END)
-    conclusion = conclusion_text.get("1.0", END)
-    goodbye = goodbye_text.get("1.0", END)
-    with open("./output/" + file, "a") as cover_letter:
-        cover_letter.write(greeting + "\n")
-        cover_letter.write(opening + "\n")
-        cover_letter.write(qualifications + "\n")
-        cover_letter.write(hobbies + "\n")
-        cover_letter.write(conclusion + "\n")
-        cover_letter.write(goodbye)
+    for n in document_components:
+        x = str(n.get("1.0", END))
+        with open("./output/" + file, "a") as cover_letter:
+            cover_letter.write(x + "\n")
 
 
 def restore():
@@ -25,8 +16,8 @@ def restore():
 
 # UI SETUP
 window = Tk()
-window.title("CLScribe")
-window.minsize(width=500, height=300)
+window.title("CL Scribe")
+window.minsize(width=700, height=500)
 window.attributes("-alpha", 0.95)
 window.config(pady=20)
 
