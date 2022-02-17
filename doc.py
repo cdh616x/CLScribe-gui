@@ -4,7 +4,7 @@ import ui
 document = Document()
 
 def file_namer():
-    file = ui.user_file_name.get("1.0", ui.END)
+    file = ui.user_file_name.get("1.0", ui.END).strip()
     for n in document_components:
         x = str(n.get("1.0", ui.END))
         document.add_paragraph(x)
